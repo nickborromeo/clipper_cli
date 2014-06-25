@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = ClipperCli::VERSION
   spec.authors       = ["Nick Borromeo"]
   spec.email         = ["ngborromeo@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Command Line application to determine value in a clipper card}
   spec.homepage      = ""
   spec.license       = "MIT"
 
