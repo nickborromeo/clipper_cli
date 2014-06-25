@@ -1,6 +1,6 @@
 # ClipperCli
 
-TODO: Write a gem description
+Simple wrapper to access the status of a given clipper card. This will simply be a command line application that returns the status and the amount left for a user's clipper card.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+NOTE: In Development
 
 ## Contributing
 
