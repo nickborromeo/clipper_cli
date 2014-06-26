@@ -3,12 +3,13 @@ require_relative "../lib/clipper_cli/clipper"
 
 describe ClipperCli::Clipper do
   let(:clipper) { Clipper.new }
+  let(:login_uri) {'https://www.clippercard.com/ClipperCard'}
 
-  it 'should be able to get clipper login page' do
-    # uri = URI('https://www.clippercard.com/ClipperCard/needLogin.jsf')
-    # response = Net::HTTP.get(uri)
-
-    # expect(response).to be_an_instance_of(String)
+  it 'should show the login page' do
+    mechanize = stub('Mechanize')
+    Mechanize.stub(:new) { mechanize }
+    mechanize.stub(:get).with(:login_url) { 'Please Log In' }
+    mechanize.get(:login_url).should eq("test")
   end
 end
 
