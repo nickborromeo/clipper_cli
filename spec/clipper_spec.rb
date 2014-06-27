@@ -2,14 +2,17 @@ require_relative "spec_helper"
 require_relative "../lib/clipper_cli/clipper"
 
 describe ClipperCli::Clipper do
-  let(:clipper) { Clipper.new }
-  let(:login_uri) {'https://www.clippercard.com/ClipperCard'}
 
-  it 'should show the login page' do
-    mechanize = stub('Mechanize')
-    Mechanize.stub(:new) { mechanize }
-    mechanize.stub(:get).with(:login_url) { 'Please Log In' }
-    mechanize.get(:login_url).should eq("test")
+  describe "#get_clipper_value" do
+    it "should call get_login_page" do
+      stub_request(:get, 'https://www.clippercard.com/ClipperCard/needLogin.jsf').
+        to_return(body: "dummy response")
+
+      @clipper = ClipperCli::Clipper.new
+      @clipper.stub(:get_login_page) { @clipper }
+      @clipper.get_clipper_value.should_receive(:get_login_page)
+      @clipper.get_clipper_value
+    end
   end
 end
 
